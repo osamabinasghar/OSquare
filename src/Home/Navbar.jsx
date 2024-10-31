@@ -23,8 +23,7 @@ const Navbar = () => {
             <a href="#how-it-works" className="hover:text-gray-300">Solutions</a>
             <a href="#featured-news" className="hover:text-gray-300">Featured news</a>
             <a href="#whats-included" className="hover:text-gray-300">What's included</a>
-            <a href="#" className="hover:text-gray-300">Plans</a>
-            <a href="#" className="hover:text-gray-300">Customer stories</a>
+            <a href="#customer-stories" className="hover:text-gray-300">Customer stories</a>
           </div>
           <div className="hidden md:flex space-x-4 items-center">
           <a

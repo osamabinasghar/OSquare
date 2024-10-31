@@ -108,7 +108,7 @@ const HowItWorks = () => {
             </div>
           </div>
         </div>
-        <Button className="mt-16" text="" size='sm' variant="dark"/> <span className='leading-4'>Learn more about Microsoft 365 for home</span>
+        <Button className="mt-16" text="" size='sm' variant="dark"/> <span className='leading-4'>Learn more about OSquare for home</span>
       </div>
     </section>
   );

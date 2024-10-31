@@ -44,7 +44,7 @@ const ChoosePlan = () => {
                     <span className="text-white font-semibold">M365</span>
                   </div>
                   <div>
-                    <p className="text-sm font-medium text-gray-900">Microsoft 365</p>
+                    <p className="text-sm font-medium text-gray-900">OSquare</p>
                     <p className="text-sm text-gray-600">Premium apps included</p>
                   </div>
                 </div>

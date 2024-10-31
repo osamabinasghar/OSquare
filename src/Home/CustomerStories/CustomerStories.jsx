@@ -50,7 +50,7 @@ const CustomerStories = () => {
   };
 
   return (
-    <section className="bg-pink-50/30 py-24">
+    <section className="bg-pink-50/30 py-24" id='customer-stories'>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-12">
           <span className="text-sm font-semibold text-gray-600 tracking-wider uppercase">

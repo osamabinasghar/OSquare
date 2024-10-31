@@ -74,47 +74,47 @@ const footerData = {
 const Footer = () => {
   return (
     <>
-        <footer className="bg-gray-50 pt-12 text-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-          {footerData.sections.map((section, index) => (
-            <div key={index}>
-                <h3 className="font-semibold text-gray-600 mb-4">{section.title}</h3>
-                <ul className="space-y-3">
-                {section.links.map((link, linkIndex) => (
-                    <li key={linkIndex}>
-                    <a
-                        href={link.url}
-                        className="text-gray-500 hover:text-gray-700 hover:underline"
-                    >
-                        {link.name}
-                    </a>
-                    </li>
+        <footer className="bg-gray-50 pt-12 text-sm pb-5">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+              {footerData.sections.map((section, index) => (
+                <div key={index}>
+                    <h3 className="font-semibold text-gray-600 mb-4">{section.title}</h3>
+                    <ul className="space-y-3">
+                    {section.links.map((link, linkIndex) => (
+                        <li key={linkIndex}>
+                        <a
+                            href={link.url}
+                            className="text-gray-500 hover:text-gray-700 hover:underline"
+                        >
+                            {link.name}
+                        </a>
+                        </li>
+                    ))}
+                    </ul>
+                </div>
                 ))}
-                </ul>
             </div>
-            ))}
-        </div>
 
-        <div className="mt-12 pt-8 border-t border-gray-200">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between space-y-4 md:space-y-0">
-            <div className="flex items-center space-x-4">
-              <Globe className="h-5 w-5 text-gray-500" />
-              <span className="text-gray-600">English (Other)</span>
-            </div>
-            
-            <div className="flex flex-wrap gap-x-6 gap-y-2 text-gray-500">
-              <a href="#" className="hover:text-gray-700 hover:underline">Contact OSquare</a>
-              <a href="#" className="hover:text-gray-700 hover:underline">Privacy</a>
-              <a href="#" className="hover:text-gray-700 hover:underline">Terms of use</a>
-              <a href="#" className="hover:text-gray-700 hover:underline">Trademarks</a>
-              <a href="#" className="hover:text-gray-700 hover:underline">About our ads</a>
-              <span>© OSquare {new Date().getFullYear()}</span>
+            <div className="mt-12 pt-8 border-t border-gray-200">
+              <div className="flex flex-col md:flex-row items-start md:items-center justify-between space-y-4 md:space-y-0">
+                <div className="flex items-center space-x-4">
+                  <Globe className="h-5 w-5 text-gray-500" />
+                  <span className="text-gray-600">English (Other)</span>
+                </div>
+                
+                <div className="flex flex-wrap gap-x-6 gap-y-2 text-gray-500">
+                  <a href="#" className="hover:text-gray-700 hover:underline">Contact OSquare</a>
+                  <a href="#" className="hover:text-gray-700 hover:underline">Privacy</a>
+                  <a href="#" className="hover:text-gray-700 hover:underline">Terms of use</a>
+                  <a href="#" className="hover:text-gray-700 hover:underline">Trademarks</a>
+                  <a href="#" className="hover:text-gray-700 hover:underline">About our ads</a>
+                  <span>© OSquare {new Date().getFullYear()}</span>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </footer>
+        </footer>
     </>
   )
 }

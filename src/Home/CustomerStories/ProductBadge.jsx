@@ -2,7 +2,7 @@ import React from 'react';
 import { FileSpreadsheet, MessageSquare } from 'lucide-react';
 
 const productIcons = {
-  'Microsoft Teams': MessageSquare,
+  'OSquare Teams': MessageSquare,
   'Excel': FileSpreadsheet
 };
 

@@ -4,7 +4,7 @@ import FeatureCard from './FeatureCard';
 const features = [
   {
     category: 'Designer',
-    title: 'Microsoft Designer',
+    title: 'OSquare Designer',
     description: 'Unleash your creativity: Design and edit anything you can imagine with AI.',
     image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80',
     buttonText: 'Learn more',
