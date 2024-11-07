@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { Sticker, FileText, Table, Mail, Grid, Shield, Cloud, ChevronRight } from 'lucide-react';
+import { ChevronRight,Sticker } from 'lucide-react';
 import AppCard from './AppCard';
 import FeaturedCard from './FeaturedCard';
 
-const apps = [
+const topPicks = [
   {
     icon: Sticker,
     iconColor: 'text-blue-600',
@@ -21,7 +21,10 @@ const apps = [
     iconColor: 'text-sky-600',
     name: 'EasyFee',
     description: 'Manage your email, calendar, tasks, and contacts in one location.'
-  },
+  }
+];
+
+const moreApps = [
   {
     icon: Sticker,
     iconColor: 'text-purple-600',
@@ -63,8 +66,15 @@ const apps = [
 const AppsShowcase = () => {
   const [activeTab, setActiveTab] = useState('top-picks');
 
+  // Determine which list of apps to display based on activeTab
+  const displayedApps = activeTab === 'top-picks' ? topPicks : moreApps;
+
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id='whats-included'>
+    <section
+      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-cover bg-center"
+      style={{ backgroundImage: "url('https://your-image-url.com/path-to-image.jpg')" }}
+      id='whats-included'
+    >
       <div className="space-y-8">
         {/* Header */}
         <div>
@@ -99,18 +109,15 @@ const AppsShowcase = () => {
             More apps
           </button>
         </div>
+        
+        {/* Featured Card (conditionally rendered) */}
+        <FeaturedCard activeTab={activeTab} />
 
         {/* Apps Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-          {/* Featured Card */}
-          <FeaturedCard />
-          
-          {/* App Cards */}
-          <div className="lg:col-span-4 grid sm:grid-cols-3 gap-6">
-            {apps.map((app, index) => (
-              <AppCard key={index} {...app} />
-            ))}
-          </div>
+        <div className="lg:col-span-4 grid p-8 grid-cols-1 sm:grid-cols-3 gap-6">
+          {displayedApps.map((app, index) => (
+            <AppCard key={index} {...app} />
+          ))}
         </div>
 
         {/* Explore All Link */}

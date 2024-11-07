@@ -3,35 +3,58 @@ import React, { useState, useEffect } from 'react';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const [activeLink, setActiveLink] = useState(''); // State to track the active link
-  const [isResourcesOpen, setIsResourcesOpen] = useState(false); // State for Resources dropdown
+  const [activeLink, setActiveLink] = useState('');
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 550); // Adjust the scroll threshold as needed
+      setIsScrolled(window.scrollY > 550);
     };
 
     window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const sectionIds = [
+      'how-it-works',
+      'featured-news',
+      'whats-included',
+      'demos',
+      'plans',
+      'customer-stories'
+    ];
+
+    const handleScroll = () => {
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const section = document.getElementById(sectionIds[i]);
+        if (section && window.scrollY >= section.offsetTop - 80) {
+          setActiveLink(sectionIds[i]);
+          break;
+        }
+      }
     };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const handleLinkClick = (link) => {
     setActiveLink(link);
-    setIsOpen(false); // Close the mobile menu on link click
-    setIsResourcesOpen(false); // Close Resources dropdown on link click
+    setIsOpen(false);
+    setIsResourcesOpen(false);
+    const section = document.getElementById(link);
+    if (section) section.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
-    <nav className={`w-full bg-white shadow-sm z-50 transition-all duration-300 ${isScrolled ? 'fixed top-0' : 'relative'} bg-white text-black`}>
+    <nav className={`w-full bg-white shadow-sm z-50 transition-all duration-300 ${isScrolled ? 'fixed top-0' : 'relative'} bg-white text-black mb-6`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center space-x-4">
             <a
               href="#how-it-works"
-              onClick={() => handleLinkClick('solutions')}
-              className={`hover:text-gray-300 ${activeLink === 'solutions' ? 'border-b-2 border-blue-950' : ''}`}
+              onClick={() => handleLinkClick('how-it-works')}
+              className={`hover:text-gray-300 ${activeLink === 'how-it-works' ? 'border-b-2 border-blue-950' : ''}`}
             >
               Solutions
             </a>
@@ -43,61 +66,33 @@ const Navbar = () => {
               Featured news
             </a>
             <a
-              href="#"
+              href="#whats-included"
               onClick={() => handleLinkClick('whats-included')}
               className={`hover:text-gray-300 ${activeLink === 'whats-included' ? 'border-b-2 border-blue-950' : ''}`}
             >
               What's included
             </a>
             <a
-              href="#"
+              href="#demos"
+              onClick={() => handleLinkClick('demos')}
+              className={`hover:text-gray-300 ${activeLink === 'demos' ? 'border-b-2 border-blue-950' : ''}`}
+            >
+              Demos
+            </a>
+            <a
+              href="#plans"
               onClick={() => handleLinkClick('plans')}
               className={`hover:text-gray-300 ${activeLink === 'plans' ? 'border-b-2 border-blue-950' : ''}`}
             >
               Plans
             </a>
             <a
-              href="#"
+              href="#customer-stories"
               onClick={() => handleLinkClick('customer-stories')}
               className={`hover:text-gray-300 ${activeLink === 'customer-stories' ? 'border-b-2 border-blue-950' : ''}`}
             >
               Customer stories
             </a>
-
-            {/* Resources Dropdown */}
-            <div className="relative">
-              <button 
-                onClick={() => setIsResourcesOpen(!isResourcesOpen)} 
-                className={`hover:text-gray-300 ${isResourcesOpen ? 'border-b-2 border-blue-950' : ''}`}
-              >
-                Resources
-              </button>
-              {isResourcesOpen && (
-                <div className="absolute z-10 mt-2 w-48 bg-white shadow-lg">
-                  <a 
-                    href="#guide" 
-                    onClick={() => handleLinkClick('guide')} 
-                    className="block px-4 py-2 text-sm hover:bg-gray-600"
-                  >
-                    Guides
-                  </a>
-                  <a 
-                    href="#webinars" 
-                    onClick={() => handleLinkClick('webinars')} 
-                    className="block px-4 py-2 text-sm hover:bg-gray-600"
-                  >
-                    Webinars
-                  </a>
-                  <a 
-                    href="#case-studies" 
-                    onClick={() => handleLinkClick('case-studies')} 
-                    className="block px-4 py-2 text-sm hover:bg-gray-600"
-                  >
-                    Case Studies
-                  </a>
-                </div>
-              )}
-            </div>
           </div>
           <div className="hidden md:flex space-x-4 items-center">
             <a

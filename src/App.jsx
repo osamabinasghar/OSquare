@@ -6,8 +6,8 @@ import Individual from './Pages/Individual'
 import Business from './Pages/Business'
 import Enterprise from './Pages/Enterprise'
 import Education from './Pages/Education'
-import Footer from './layout/Footer'
-import Slider from './Slider'
+import Footer1 from './layout/Footer1'
+// import Slider from './Slider'
 
 const App = () => {
   return (
@@ -22,7 +22,7 @@ const App = () => {
           <Route path='/Indudual' element={<Individual />} />
         </Routes>
       </BrowserRouter>
-      <Footer />
+      <Footer1 />
       {/* <Slider /> */}
     </>
   )
