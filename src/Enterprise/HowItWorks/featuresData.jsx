@@ -50,11 +50,11 @@ export const tab1Features = [
 ];
 
 export const tab1Images = {
-    "accordion-1": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80",
-    "accordion-2": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80",
-    "accordion-3": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80",
-    "accordion-4": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80",
-    "accordion-5": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80",
+    "accordion-1": "/enterprise/Seamless-team-collaboration.jpg",
+    "accordion-2": "/enterprise/Effortless-payroll.jpg",
+    "accordion-3": "/enterprise/Instant-employee-insights.jpg",
+    "accordion-4": "/enterprise/Flexible-financing.jpg",
+    "accordion-5": "/enterprise/Smart-data-organization.jpg",
 };
 
 export const tab2Features = [
@@ -106,11 +106,11 @@ export const tab2Features = [
 ];
 
 export const tab2Images = {
-    "accordion-1": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80",
-    "accordion-2": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80",
-    "accordion-3": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80",
-    "accordion-4": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80",
-    "accordion-5": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80",
+    "accordion-1": "/enterprise/Accelerate-your-workflow.jpg",
+    "accordion-2": "/enterprise/Leverage-interconnected-app.jpg",
+    "accordion-3": "/enterprise/Tackle-challenges-with-ease.jpg",
+    "accordion-4": "/enterprise/Stay-on-Track.jpg",
+    "accordion-5": "/enterprise/Enhance-team-Efficiency.jpg",
 };
 
 export const tab3Features = [
@@ -162,9 +162,9 @@ export const tab3Features = [
 ];
 
 export const tab3Images = {
-    "accordion-1": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80",
-    "accordion-2": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80",
-    "accordion-3": "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80",
-    "accordion-4": "https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80",
-    "accordion-5": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80",
+    "accordion-1": "/enterprise/Leverage-insight-from-Data.jpg",
+    "accordion-2": "/enterprise/Gain-robust-security.jpg",
+    "accordion-3": "/enterprise/Safeguard-your-data.jpg",
+    "accordion-4": "/enterprise/Optimize-content-management.jpg",
+    "accordion-5": "/enterprise/Lead-with-accountability.jpg",
 };

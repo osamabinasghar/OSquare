@@ -30,11 +30,11 @@ const Pricing = () => {
             ]}
             buttonText="Get started"
             products={[
-              "https://via.placeholder.com/150",
-              "https://via.placeholder.com/150",
-              "https://via.placeholder.com/150",
-              "https://via.placeholder.com/150",
-              "https://via.placeholder.com/150",
+              "/apps/AMS.png",
+              "/apps/EasyFee.png",
+              "/apps/EasyForms.png",
+              "/apps/AMS.png",
+              "/apps/AMS.png",
             ]}
           />
           {/* Pricing Card 2 */}
@@ -80,6 +80,7 @@ const Pricing = () => {
 };
 
 // PricingCard Component for reuse
+// PricingCard Component for reuse
 const PricingCard = ({ title, price, features, buttonText, products }) => (
   <div className="flex flex-col items-center gap-6 rounded-md bg-gray-100 p-8 text-center">
     {/* Card Title */}
@@ -112,19 +113,19 @@ const PricingCard = ({ title, price, features, buttonText, products }) => (
         {buttonText}
       </a>
 
-      {/* Product Images */}
-      <div className="mt-6 row-auto grid grid-cols-2 gap-2">
+      <div className="mt-6 flex gap-2 overflow-x-auto">
         {products.map((product, index) => (
           <img
             key={index}
             src={product}
             alt={`Product ${index + 1}`}
-            className="h-24 w-24 object-cover rounded"
+            className="h-6 w-6 object-cover rounded"
           />
         ))}
       </div>
     </div>
   </div>
 );
+
 
 export default Pricing;
