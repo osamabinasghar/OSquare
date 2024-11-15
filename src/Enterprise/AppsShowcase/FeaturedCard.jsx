@@ -5,7 +5,7 @@ const FeaturedCard = ({ activeTab }) => {
   // Set background image and text based on activeTab
   const backgroundImage =
     activeTab === 'top-picks'
-      ? "url('https://plus.unsplash.com/premium_photo-1722092223135-21fd4b5f9cc8?q=80&w=1450&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
+      ? "url('https://static.tildacdn.com/tild3339-3562-4238-b038-666363383163/Group_1.png')"
       : "url('https://images.unsplash.com/photo-1500627965408-b5f2c8793f17?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')";
   
   const cardTitle =

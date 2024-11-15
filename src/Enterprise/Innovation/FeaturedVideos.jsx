@@ -7,18 +7,18 @@ const FeaturedVideos = () => {
 
   // Sample video URLs (replace these with actual URLs)
   const videoUrls = [
-    'https://www.youtube.com/embed/dQw4w9WgXcQ',
-    'https://www.youtube.com/embed/tgbNymZ7vqY',
-    'https://www.youtube.com/embed/oHg5SJYRHA0',
-    'https://www.youtube.com/embed/V-_O7nl0Ii0',
+    '/public/apps/AMS-Banner.png',
+    '/publc/apps/iTeam-Banner.png',
+    '/public/apps/HR360-Banner.png',
+    // 'https://www.youtube.com/embed/V-_O7nl0Ii0',
   ];
 
   // Button labels for each video
   const buttonLabels = [
-    'ITeam',
     'AMS',
+    'ITeam',
     'HR360 Cloud',
-    'Easy Forms',
+    // 'Easy Forms',
   ];
 
   return (
@@ -59,7 +59,7 @@ const FeaturedVideos = () => {
 
       {/* Video Frame */}
       <div className="flex justify-center">
-        <div className="w-full max-w-3xl aspect-video border-2 border-gray-200 rounded-lg shadow-lg overflow-hidden">
+        <div className="w-full max-w-5xl aspect-video border-2 border-gray-200 rounded-lg shadow-lg overflow-hidden">
           <iframe
             className="w-full h-full"
             src={videoUrls[activeVideo]}

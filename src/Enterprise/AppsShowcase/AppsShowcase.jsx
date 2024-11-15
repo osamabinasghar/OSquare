@@ -1,67 +1,80 @@
 import React, { useState } from 'react';
-import { ChevronRight,Sticker } from 'lucide-react';
+import { ChevronRight, } from 'lucide-react';
 import AppCard from './AppCard';
 import FeaturedCard from './FeaturedCard';
 
+
 const topPicks = [
   {
-    icon: Sticker,
+    icon: '/apps/ams.svg',
     iconColor: 'text-blue-600',
     name: 'AMS',
-    description: 'Elevate your writing and create beautiful documents—anywhere, anytime.'
+    description: 'Streamline attendance tracking and manage your workforce effortlessly—anytime, anywhere.'
   },
   {
-    icon: Sticker,
+    icon:'/apps/iteam.svg',
     iconColor: 'text-green-600',
-    name: 'Aasaann',
-    description: 'Turn data into insights with free and premium spreadsheets.'
+    name: 'iTeam',
+    description: 'Empower your team and streamline project workflows—collaborate, manage tasks, and track progress from anywhere.'
   },
   {
-    icon: Sticker,
+    icon: '/apps/hr360.svg',
     iconColor: 'text-sky-600',
-    name: 'EasyFee',
-    description: 'Manage your email, calendar, tasks, and contacts in one location.'
+    name: 'HR360Cloud',
+    description: 'Optimize your HR processes and manage employee data seamlessly—all in one secure, cloud-based platform.'
+  },
+  {
+    icon: '/apps/easyforms.svg',
+    iconColor: 'text-sky-600',
+    name: 'EasyForms',
+    description: 'Create, manage, and automate forms with ease—streamline data collection and improve workflow efficiency.'
+  },
+  {
+    icon: '/apps/leadkonnekt.svg',
+    iconColor: 'text-sky-600',
+    name: 'LeadKonnekt',
+    description: 'Effortlessly generate, manage, and optimize leads—simplify prospecting and enhance your customer acquisition strategy with LeadKonnekt.'
   }
 ];
 
-const moreApps = [
-  {
-    icon: Sticker,
-    iconColor: 'text-purple-600',
-    name: 'EasyForms',
-    description: 'Access your apps and files all in one place.'
-  },
-  {
-    icon: Sticker,
-    iconColor: 'text-blue-700',
-    name: 'HR360Cloud',
-    description: 'Safeguard your personal data and devices with an easy-to-use app. Requires a OSquare 365 Personal or Family plan.'
-  },
-  {
-    icon: Sticker,
-    iconColor: 'text-blue-500',
-    name: 'iSchool',
-    description: 'Save and share your files and photos, wherever you go.'
-  },
-  {
-    icon: Sticker,
-    iconColor: 'text-purple-600',
-    name: 'iSchool For Me',
-    description: 'Access your apps and files all in one place.'
-  },
-  {
-    icon: Sticker,
-    iconColor: 'text-blue-700',
-    name: 'iTeam',
-    description: 'Safeguard your personal data and devices with an easy-to-use app. Requires a OSquare 365 Personal or Family plan.'
-  },
-  {
-    icon: Sticker,
-    iconColor: 'text-blue-500',
-    name: 'Soul Whispers',
-    description: 'Save and share your files and photos, wherever you go.'
-  }
-];
+// const moreApps = [
+//   {
+//     icon: '/apps/AMS.png',
+//     iconColor: 'text-purple-600',
+//     name: 'EasyForms',
+//     description: 'Access your apps and files all in one place.'
+//   },
+//   {
+//     icon: '/apps/AMS.png',
+//     iconColor: 'text-blue-700',
+//     name: 'HR360Cloud',
+//     description: 'Safeguard your personal data and devices with an easy-to-use app. Requires a OSquare 365 Personal or Family plan.'
+//   },
+//   {
+//     icon: '/apps/AMS.png',
+//     iconColor: 'text-blue-500',
+//     name: 'iSchool',
+//     description: 'Save and share your files and photos, wherever you go.'
+//   },
+//   {
+//     icon: '/public/apps/AMS.png',
+//     iconColor: 'text-purple-600',
+//     name: 'iSchool For Me',
+//     description: 'Access your apps and files all in one place.'
+//   },
+//   {
+//     icon: '/public/apps/AMS.png',
+//     iconColor: 'text-blue-700',
+//     name: 'iTeam',
+//     description: 'Safeguard your personal data and devices with an easy-to-use app. Requires a OSquare 365 Personal or Family plan.'
+//   },
+//   {
+//     icon: '/public/apps/AMS.png',
+//     iconColor: 'text-blue-500',
+//     name: 'Soul Whispers',
+//     description: 'Save and share your files and photos, wherever you go.'
+//   }
+// ];
 
 const AppsShowcase = () => {
   const [activeTab, setActiveTab] = useState('top-picks');
@@ -82,7 +95,18 @@ const AppsShowcase = () => {
             WHAT'S INCLUDED
           </span>
           <h2 className="mt-2 text-4xl font-semibold text-gray-900">
-            Boost your potential with O Square
+            Boost your potential with <span
+            style={{
+              fontFamily: 'Bhineka',
+              fontSize: '2.5rem',
+              background: 'linear-gradient(to right, #1E4FCD, #F36F7E)', // Replace with your desired colors
+              WebkitBackgroundClip: 'text',
+              color: 'transparent',
+            }}
+            className='mr-0'
+          >
+            O
+          </span>Square
           </h2>
         </div>
 
@@ -98,7 +122,7 @@ const AppsShowcase = () => {
           >
             Top picks
           </button>
-          <button
+          {/* <button
             onClick={() => setActiveTab('more-apps')}
             className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
               activeTab === 'more-apps'
@@ -107,21 +131,21 @@ const AppsShowcase = () => {
             }`}
           >
             More apps
-          </button>
+          </button> */}
         </div>
         
         {/* Featured Card (conditionally rendered) */}
         <FeaturedCard activeTab={activeTab} />
 
         {/* Apps Grid */}
-        <div className="lg:col-span-4 grid p-8 grid-cols-1 sm:grid-cols-3 gap-6">
+        <div className="lg:col-span-3 grid p-8 grid-cols-1 sm:grid-cols-3 gap-6">
           {displayedApps.map((app, index) => (
             <AppCard key={index} {...app} />
           ))}
         </div>
 
         {/* Explore All Link */}
-        <div className="flex justify-end">
+        {/* <div className="flex justify-end">
           <a
             href="#"
             className="inline-flex items-center text-[#0F1B4C] font-semibold hover:underline group"
@@ -129,7 +153,7 @@ const AppsShowcase = () => {
             Explore all apps
             <ChevronRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-0.5" />
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );

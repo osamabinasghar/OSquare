@@ -25,7 +25,7 @@ const FeatureCard = ({
       <div className="flex  flex-col justify-between p-8 h-full"> {/* Flexbox to make the button stick to bottom */}
         <div className="mb-6">
           <div className="flex items-center gap-2 mb-2">
-            <Icon className="w-5 h-5" />
+            {/* <Icon className="w-5 h-5" /> */}
             <span className="text-sm font-semibold">{category}</span>
           </div>
           <h3 className="text-2xl font-semibold mb-4 text-[#1a1a1a]">{title}</h3>
@@ -45,13 +45,7 @@ const FeatureCard = ({
               >
             {buttonText}
           </button>
-             
-         
-        </div>
-
-       
-
-    
+        </div>       
       </div>
     </div>
   );

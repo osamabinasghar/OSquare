@@ -15,8 +15,9 @@ const App = () => {
       <Header />
       <BrowserRouter>
         <Routes>
-          <Route path='/' element={<Navigate to="/enterprise" replace />} />
-          <Route path='/enterprise' element={<Enterprise />} />
+          {/* <Route path='/' element={<Navigate to="/enterprise" replace />} /> */}
+          {/* <Route path='/enterprise' element={<Enterprise />} /> */}
+          <Route path='/' element={<Enterprise />} />
           <Route path='/business' element={<Business/>} />
           <Route path='/education' element={<Education />} />
           <Route path='/Indudual' element={<Individual />} />

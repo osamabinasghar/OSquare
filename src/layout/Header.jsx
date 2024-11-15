@@ -3,18 +3,42 @@ import { ChevronDownIcon, MagnifyingGlassIcon, UserCircleIcon } from '@heroicons
 
 const Header = () => {
   const [showProductsDropdown, setShowProductsDropdown] = useState(false);
-  const dropdownRef = useRef(null);
+  const [showResourcesDropdown, setShowResourcesDropdown] = useState(false);
+  const [showSupportDropdown, setShowSupportDropdown] = useState(false);
+
+  const productsDropdownRef = useRef(null);
+  const resourcesDropdownRef = useRef(null);
+  const supportDropdownRef = useRef(null);
 
   // Toggle dropdown when "Products" button is clicked
-  const toggleDropdown = () => {
+  const toggleProductsDropdown = () => {
     setShowProductsDropdown(prevState => !prevState);
+    setShowResourcesDropdown(false); // Close other dropdown
   };
 
-  // Close dropdown if clicked outside
+  // Toggle dropdown when "Resources" button is clicked
+  const toggleResourcesDropdown = () => {
+    setShowResourcesDropdown(prevState => !prevState);
+    setShowProductsDropdown(false); // Close other dropdown
+  };
+
+  const toggleSupportDropdown = () => {
+    setShowSupportDropdown(prev => !prev);
+    setShowProductsDropdown(false);
+    setShowResourcesDropdown(false);
+  };
+
+  // Close dropdowns if clicked outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+      if (
+        productsDropdownRef.current && !productsDropdownRef.current.contains(event.target) &&
+        resourcesDropdownRef.current && !resourcesDropdownRef.current.contains(event.target) &&
+        supportDropdownRef.current && !supportDropdownRef.current.contains(event.target)
+      ) {
         setShowProductsDropdown(false);
+        setShowResourcesDropdown(false);
+        setShowSupportDropdown(false);
       }
     };
 
@@ -29,16 +53,22 @@ const Header = () => {
       <header className="bg-white shadow-md">
         <nav className="mx-auto flex max-w-7xl items-center justify-between p-5">
           <div className="flex items-center gap-x-6">
-            <img src="/Logo.svg" alt="OSquare" className="h-6" /> |
-            <span className="text-lg text-[#212659] font-bold">O Square</span>
+          <a href="/">
+            <span className='flex items-center'>
+              <img src='/icon.svg' className='h-8 mr-2' /> {/* Adjust margin here */}
+              <span style={{fontSize: '2rem'}}>|</span>
+              <img src="/Logo.svg" alt="OSquare" className="h-8 ml-2" /> {/* Adjust margin here */}
+            </span>
+          </a>
 
             {/* Navigation Links */}
             <div className="hidden lg:flex lg:gap-x-6 ml-8 relative">
+              
               {/* Products Dropdown */}
               <div 
                 className="relative"
-                onClick={toggleDropdown}
-                ref={dropdownRef}
+                onClick={toggleProductsDropdown}
+                ref={productsDropdownRef}
               >
                 <button className="text-sm text-gray-700 hover:text-gray-900 flex items-center">
                   Products
@@ -47,7 +77,7 @@ const Header = () => {
                 
                 {/* Full-Width Multi-Column Dropdown Menu */}
                 {showProductsDropdown && (
-                  <div className="absolute top-full mt-6 w-[70rem] bg-white border-t border-gray-200 shadow-lg z-20 shadow-xl overflow-y-auto scrollbar-hide"  style={{ maxHeight: '500px' }} >
+                  <div className="absolute top-full mt-7 w-[70rem] bg-white border-t border-gray-200 shadow-lg z-20 shadow-xl overflow-y-auto scrollbar-hide"  style={{ maxHeight: '500px' }} >
                     <div className="mx-auto max-w-7xl p-6 grid grid-cols-5 border-b-2 border-blue-900">
                       {/* Column 1 */}
                       <div>
@@ -99,33 +129,80 @@ const Header = () => {
                     </div>
                   </div>
                 )}
+
               </div>
 
               <a href="#" className="text-sm text-gray-700 hover:text-gray-900">
                 Plans and pricing
               </a>
-              <button className="text-sm text-gray-700 hover:text-gray-900 flex items-center">
-                Resources
-                <ChevronDownIcon className="ml-1 h-4 w-4" />
-              </button>
-              <button className="text-sm text-gray-700 hover:text-gray-900 flex items-center">
-                Support
-                <ChevronDownIcon className="ml-1 h-4 w-4" />
-              </button>
-            </div>
-          </div>
 
-          <div className="flex items-center gap-x-8">
-            <button className="text-sm text-gray-700 hover:text-gray-900 flex items-center">
-              All OSquare
-              <ChevronDownIcon className="ml-1 h-4 w-4" />
-            </button>
-            <button className="text-gray-700 hover:text-gray-900">
-              <MagnifyingGlassIcon className="h-5 w-5" />
-            </button>
-            <button className="text-gray-700 hover:text-gray-900">
-              <UserCircleIcon className="h-6 w-6" />
-            </button>
+              {/* Single-Column Dropdown for Resources */}
+              <div 
+                className="relative"
+                onClick={toggleResourcesDropdown}
+                ref={resourcesDropdownRef}
+              >
+                <button className="text-sm text-gray-700 hover:text-gray-900 flex items-center">
+                  Resources
+                  <ChevronDownIcon className="ml-1 h-4 w-4" />
+                </button>
+
+                {showResourcesDropdown && (
+                  <div className="absolute top-full mt-7 w-56 bg-white border border-gray-200 shadow-lg z-20">
+                    <ul className="p-4 border-b-2 border-blue-900">
+                      <li className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">
+                        <a href="#">Documentation</a>
+                      </li>
+                      <li className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">
+                        <a href="#">API Reference</a>
+                      </li>
+                      <li className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">
+                        <a href="#">Community Forum</a>
+                      </li>
+                      <li className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">
+                        <a href="#">Tutorials</a>
+                      </li>
+                      <li className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">
+                        <a href="#">Blog</a>
+                      </li>
+                    </ul>
+                  </div>
+                )}
+              </div>
+              {/* Support Dropdown */}
+              <div 
+                className="relative"
+                onClick={toggleSupportDropdown}
+                ref={supportDropdownRef}
+              >
+                <button className="text-sm text-gray-700 hover:text-gray-900 flex items-center">
+                  Support
+                  <ChevronDownIcon className="ml-1 h-4 w-4" />
+                </button>
+
+                {showSupportDropdown && (
+                  <div className="absolute top-full mt-7 w-56 bg-white border border-gray-200 shadow-lg z-20">
+                    <ul className="p-4 border-b-2 border-blue-900">
+                      <li className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">
+                        <a href="#">Contact Support</a>
+                      </li>
+                      <li className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">
+                        <a href="#">Live Chat</a>
+                      </li>
+                      <li className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">
+                        <a href="#">Submit a Ticket</a>
+                      </li>
+                      <li className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">
+                        <a href="#">Help Center</a>
+                      </li>
+                      <li className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">
+                        <a href="#">FAQ</a>
+                      </li>
+                    </ul>
+                  </div>
+                )}
+              </div>
+            </div>
           </div>
         </nav>
       </header>

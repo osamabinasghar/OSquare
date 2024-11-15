@@ -7,7 +7,7 @@ export const tab1Features = [
     icon: Shield,
     title: "Seamless Team Collaboration",
     description:
-      "Effortlessly manage, plan, and track tasks and projects across all teams with the powerful support of iTeam in O Square.",
+      "Effortlessly manage, plan, and track tasks and projects across all teams with the powerful support of iTeam in OSquare.",
     expanded: true,
     highlighted: true,
   },
@@ -16,7 +16,7 @@ export const tab1Features = [
     icon: Lightbulb,
     title: "Effortless Payroll",
     description:
-      "Manage payroll with hr360 cloud in O Square, ensuring precise and on-time payments for your entire workforce.",
+      "Manage payroll with hr360 cloud in OSquare, ensuring precise and on-time payments for your entire workforce.",
     expanded: false,
     highlighted: false,
   },
@@ -34,7 +34,7 @@ export const tab1Features = [
     icon: Shield,
     title: "Flexible Financing",
     description:
-      "Discover a range of flexible financing options and simplify online payments with seamless fee management in O Square.",
+      "Discover a range of flexible financing options and simplify online payments with seamless fee management in OSquare.",
     expanded: false,
     highlighted: false,
   },
@@ -43,7 +43,7 @@ export const tab1Features = [
     icon: Lightbulb,
     title: "Smart Data Organization",
     description:
-      "With intuitive forms in O Square, effortlessly organize and analyze data, eliminating the risks of misplacement and errors.",
+      "With intuitive forms in OSquare, effortlessly organize and analyze data, eliminating the risks of misplacement and errors.",
     expanded: false,
     highlighted: false,
   },
@@ -81,7 +81,7 @@ export const tab2Features = [
         icon: Zap,
         title: "Tackle Challenges with Ease",
         description:
-          "Conquer your boldest projects with O Square, seamlessly combining content and context to enhance your skills and drive success.",
+          "Conquer your boldest projects with OSquare, seamlessly combining content and context to enhance your skills and drive success.",
         expanded: false,
         highlighted: false,
       },

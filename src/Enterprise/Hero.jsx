@@ -5,7 +5,7 @@ import Spline from '@splinetool/react-spline';
 const Hero = () => {
   return (
     <div 
-      className="relative mx-auto max-w-full py-8 px-4 sm:px-6 md:px-10 bg-cover bg-center"
+      className="relative  py-10 px-4 sm:px-6 md:px-10 bg-cover bg-center mt-11"
     >
       {/* Spline Background */}
       <div className="absolute inset-0 -z-10">
@@ -13,16 +13,50 @@ const Hero = () => {
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 mx-auto mb-8 w-full max-w-3xl text-center md:mb-12 lg:mb-8">
+      <div className="relative z-10 mx-auto mb-4 w-full max-w-3xl text-center md:mb-8 lg:mb-4 mt-5">
         {/* Hero Title */}
         <p className="mx-auto mb-2 max-w-lg text-xs sm:text-sm md:text-base text-gray-500 md:mb-6 lg:mb-8">
-          OSquare For Enterprise
+        <span
+          style={{
+            fontFamily: 'Bhineka',
+            fontSize: '1.5rem',
+            // background: 'linear-gradient(to right, #1E4FCD, #F36F7E)', // Replace with your desired colors
+            WebkitBackgroundClip: 'text',
+            // color: 'transparent',
+          }}
+          className='mr-0'
+        >
+          O
+        </span>Square For Enterprise
         </p>
         <h1 className="mb-4 text-1xl sm:text-1xl md:text-2xl lg:text-4xl font-bold text-blue-950 leading-tight">
-          Empower Your Business to <br/>Thrive with O Square
+          Empower Your Business to <br/>Thrive with <span className='mr-1'></span>
+          <span
+          style={{
+            fontFamily: 'Bhineka',
+            fontSize: '2.5rem',
+            background: 'linear-gradient(to right, #1E4FCD, #F36F7E)', // Replace with your desired colors
+            WebkitBackgroundClip: 'text',
+            color: 'transparent',
+          }}
+          className='mr-0'
+        >
+          O
+        </span>Square
         </h1>
         <p className="mx-auto mb-5 max-w-lg text-sm sm:text-base lg:text-lg text-gray-500 md:mb-6 lg:mb-8">
-          Unlock the full potential of your teams with O Square, enabling them to collaborate seamlessly, and achieve exceptional business outcomes.
+          Unlock the full potential of your teams with <span
+          style={{
+            fontFamily: 'Bhineka',
+            fontSize: '1.5rem',
+            // background: 'linear-gradient(to right, #1E4FCD, #F36F7E)', // Replace with your desired colors
+            WebkitBackgroundClip: 'text',
+            // color: 'transparent',
+          }}
+          className='mr-0'
+        >
+          O
+        </span>Square, enabling them to collaborate seamlessly, and achieve exceptional business outcomes.
         </p>
 
         {/* Hero Button */}
@@ -31,7 +65,7 @@ const Hero = () => {
             href="#"
             className="inline-block rounded-md bg-blue-950 px-5 sm:px-8 py-3 sm:py-4 text-center font-semibold text-white transition-all duration-200 hover:bg-blue-800"
           >
-            See plans and pricing
+            Try Now
           </a>
         </div>
       </div>

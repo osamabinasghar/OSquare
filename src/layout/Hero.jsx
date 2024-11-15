@@ -1,46 +1,3 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Home, Briefcase, Building2, GraduationCap, ArrowRight } from 'lucide-react';
-
-const segments = [
-  {
-    id: 'home',
-    icon: Home,
-    label: 'For home',
-    title: 'Supercharge your everyday',
-    description: 'Get productivity apps, security features, and storage with Microsoft 365. Add AI power with Copilot Pro.',
-    image: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?auto=format&fit=crop&q=80',
-    cta: 'See plans and pricing'
-  },
-  {
-    id: 'business',
-    icon: Briefcase,
-    label: 'For business',
-    title: 'Power your business growth',
-    description: 'Transform your business with AI-powered tools, enhanced security, and collaborative features designed for teams.',
-    image: 'https://images.unsplash.com/photo-1553877522-43269d4ea984?auto=format&fit=crop&q=80',
-    cta: 'Explore business solutions'
-  },
-  {
-    id: 'enterprise',
-    icon: Building2,
-    label: 'For enterprise',
-    title: 'Enterprise-grade solutions',
-    description: 'Scale your enterprise with advanced security, compliance, and AI capabilities built for large organizations.',
-    image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80',
-    cta: 'View enterprise plans'
-  },
-  {
-    id: 'education',
-    icon: GraduationCap,
-    label: 'For education',
-    title: 'Empower learning',
-    description: 'Create engaging learning experiences with tools designed for modern education and classroom collaboration.',
-    image: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80',
-    cta: 'Discover education tools'
-  }
-];
-
 const Hero = () => {
   const [activeSegment, setActiveSegment] = useState(segments[0].id);
   const currentSegment = segments.find(seg => seg.id === activeSegment);
@@ -48,7 +5,7 @@ const Hero = () => {
   return (
     <>
     <header>
-       <div className="mx-auto max-w-7xl px-5 py-32 md:px-10">
+       <div className="mx-auto max-w-7xl px-5 py-50 md:px-10"> {/* Increased py-32 to py-40 */}
          <div className="mx-auto mb-8 w-full max-w-3xl text-center md:mb-12 lg:mb-16">
            {/* Hero Title */}
            <p className="mx-auto mb-2 max-w-lg text-sm text-gray-500 sm:text-base md:mb-6 lg:mb-8">
@@ -102,14 +59,14 @@ const Hero = () => {
         </div>
        </div>
      </header>
-    <div className="relative min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50">
+    <div className="relative min-h-[150vh] bg-gradient-to-br from-blue-50 via-white to-purple-50"> {/* Set min-h-[150vh] to increase height */}
       {/* Background Decorations */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-24 -right-24 w-96 h-96 bg-purple-200/30 rounded-full blur-3xl" />
         <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-200/30 rounded-full blur-3xl" />
       </div>
       {/* Content */}
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-32">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-40"> {/* Increased bottom padding */}
         {/* Hero Content */}
         <motion.div
           key={activeSegment}

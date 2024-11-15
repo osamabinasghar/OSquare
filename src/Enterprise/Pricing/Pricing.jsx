@@ -2,9 +2,9 @@ import React from 'react';
 
 const Pricing = () => {
   return (
-    <section id='plans'>
+    <section id="plans">
       {/* Container */}
-      <div className="mx-auto max-w-6xl px-5 py-16 md:px-10 md:py-20">
+      <div className="mx-auto max-w-2xl px-5 py-16 md:px-10 md:py-20">
         {/* Heading Container */}
         <div className="mx-auto mb-8 text-center md:mb-12 lg:mb-16">
           {/* Heading */}
@@ -16,70 +16,69 @@ const Pricing = () => {
         </div>
 
         {/* Pricing Cards */}
-        <div className="grid gap-8 md:grid-cols-3">
+        <div className="grid gap-8">
           {/* Pricing Card 1 */}
           <PricingCard
-            title="Basic"
-            price="$49"
+            title="Features"
+            // price="$49"
             features={[
-              "Basic Designs",
-              "Monthly Updates",
-              "Copy & Paste",
-              "Standard Access",
-              "Community Support",
+              "Attendance Management",
+              "Project Management",
+              "Human Resource Management",
+              "Forms Management",
+              "Lead Generation",
             ]}
             buttonText="Get started"
             products={[
-              "/apps/AMS.png",
-              "/apps/EasyFee.png",
-              "/apps/EasyForms.png",
-              "/apps/AMS.png",
-              "/apps/AMS.png",
+              "/apps/ams.svg",
+              "/apps/iteam.svg",
+              "/apps/hr360.svg",
+              "/apps/easyforms.svg",
+              "/apps/leadkonnekt.svg",
             ]}
           />
           {/* Pricing Card 2 */}
-          <PricingCard
+          {/* <PricingCard
             title="Standard"
             price="$99"
             features={[
-              "Premium Designs",
-              "Regular Updates",
-              "Copy & Paste",
-              "Lifetime Access",
-              "Priority Support",
+              "Attendance Management",
+              "Project Management",
+              "Human Resource Management",
             ]}
             buttonText="Get started"
             products={[
-              "https://via.placeholder.com/150",
-              "https://via.placeholder.com/150",
+              "/apps/ams.svg",
+              "/apps/iteam.svg",
+              "/apps/hr360.svg",
             ]}
-          />
+          /> */}
           {/* Pricing Card 3 */}
-          <PricingCard
+          {/* <PricingCard
             title="Pro"
             price="$199"
             features={[
-              "Exclusive Designs",
-              "Weekly Updates",
-              "Unlimited Access",
-              "Lifetime Access",
-              "24/7 Premium Support",
+              "Attendance Management",
+              "Project Management",
+              "Human Resource Management",
+              "Forms Management",
+              "Lead Generation",
             ]}
             buttonText="Get started"
             products={[
-              "https://via.placeholder.com/150",
-              "https://via.placeholder.com/150",
-              "https://via.placeholder.com/150",
-              "https://via.placeholder.com/150",
+              "/apps/ams.svg",
+              "/apps/iteam.svg",
+              "/apps/hr360.svg",
+              "/apps/easyforms.svg",
+              "/apps/leadkonnekt.svg",
             ]}
-          />
+          /> */}
         </div>
       </div>
     </section>
   );
 };
 
-// PricingCard Component for reuse
 // PricingCard Component for reuse
 const PricingCard = ({ title, price, features, buttonText, products }) => (
   <div className="flex flex-col items-center gap-6 rounded-md bg-gray-100 p-8 text-center">
@@ -101,31 +100,30 @@ const PricingCard = ({ title, price, features, buttonText, products }) => (
     </div>
 
     {/* Price Section */}
-    <div className="text-center mt-4">
-      <h2 className="mb-4 text-3xl font-bold md:text-4xl">
+    <div className="text-center mt-2">
+      {/* <h2 className="mb-4 text-3xl font-bold md:text-4xl">
         {price}
         <span className="text-sm font-light">/month</span>
-      </h2>
+      </h2> */}
+
+<div className="flex gap-2 overflow-x-auto">
+  {products.map((product, index) => (
+    <img
+      key={index}
+      src={product}
+      alt={`Product ${index + 1}`}
+      className="h-16 w-16 object-contain rounded" // Change to object-contain
+    />
+  ))}
+</div>
       <a
         href="#"
-        className="inline-block w-full rounded-md bg-[#172554] px-6 py-3 font-semibold text-white"
+        className="inline-block w-full rounded-md bg-[#172554] px-6 py-3 mt-3 font-semibold text-white"
       >
         {buttonText}
       </a>
-
-      <div className="mt-6 flex gap-2 overflow-x-auto">
-        {products.map((product, index) => (
-          <img
-            key={index}
-            src={product}
-            alt={`Product ${index + 1}`}
-            className="h-6 w-6 object-cover rounded"
-          />
-        ))}
-      </div>
     </div>
   </div>
 );
-
 
 export default Pricing;

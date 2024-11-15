@@ -47,7 +47,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`w-full bg-white shadow-sm z-50 transition-all duration-300 ${isScrolled ? 'fixed top-0' : 'relative'} bg-white text-black mb-6`}>
+    <nav className={`w-full bg-white shadow-sm z-50 transition-all duration-300 ${isScrolled ? 'fixed top-0' : 'relative'} bg-white text-black`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center space-x-4">
@@ -72,13 +72,13 @@ const Navbar = () => {
             >
               What's included
             </a>
-            <a
+            {/* <a
               href="#demos"
               onClick={() => handleLinkClick('demos')}
               className={`hover:text-gray-300 ${activeLink === 'demos' ? 'border-b-2 border-blue-950' : ''}`}
             >
               Demos
-            </a>
+            </a> */}
             <a
               href="#plans"
               onClick={() => handleLinkClick('plans')}
@@ -99,7 +99,7 @@ const Navbar = () => {
               href="#"
               className="mr-5 inline-block rounded-md bg-blue-950 px-4 py-2 text-center font-semibold text-white md:mr-6 lg:mr-8"
             >
-              See plans and pricing
+              Try Now
             </a>
           </div>
           <div className="md:hidden flex items-center">
