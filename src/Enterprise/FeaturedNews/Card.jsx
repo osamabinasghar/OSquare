@@ -1,5 +1,6 @@
 import React from 'react';
-import { Bot } from 'lucide-react';
+import Slider from './Slider';
+import { Link } from 'react-router-dom';
 
 const Card = () => {
   return (
@@ -7,7 +8,7 @@ const Card = () => {
       {/* Top Left Text */}
       <div className="p-4">
         {/* <p className="text-sm font-semibold text-gray-700">O Square</p> */}
-        <img src="/icon.svg" alt="icon" width={25} />
+        <img src="/icon2.svg" alt="icon" width={25} />
       </div>
 
       <div className="grid lg:grid-cols-2 gap-8 p-4">
@@ -32,7 +33,7 @@ const Card = () => {
           </div>
 
           <p className="text-lg text-gray-600">
-          <span
+          {/* <span
             style={{
               fontFamily: 'Bhineka',
               fontSize: '1.4rem',
@@ -43,13 +44,14 @@ const Card = () => {
             className='mr-0'
           >
             O
-          </span>Square is here to assist you with solutions, and support every step of the way..
+          </span> */}
+          OSquare is here to assist you with solutions, and support every step of the way..
           </p>
 
           <div className="flex flex-wrap gap-4 justify-center">
-            <button className="inline-flex items-center px-6 py-3 bg-[#0F1B4C] text-white font-semibold rounded-md hover:bg-[#1a2b6d] transition-colors">
+            <Link to="/enterprisepricing"><button className="inline-flex items-center px-6 py-3 bg-[#0F1B4C] text-white font-semibold rounded-md hover:bg-[#1a2b6d] transition-colors">
               Try Now
-            </button>
+            </button></Link>
             {/* <button className="inline-flex items-center px-6 py-3 bg-white text-[#0F1B4C] font-semibold rounded-md border border-[#0F1B4C] hover:bg-gray-50 transition-colors">
               Download the app
             </button> */}
@@ -57,18 +59,20 @@ const Card = () => {
         </div>
 
         {/* Image Side */}
-        <div className="relative bg-pink-50 p-8 lg:p-12 flex items-center justify-center">
+        <div className="relative p-8 lg:p-12 flex items-center justify-center">
           {/* <div className="absolute top-8 right-8 lg:right-12 max-w-xs">
             <div className="bg-pink-200 text-gray-900 px-6 py-3 rounded-full">
               <p className="font-medium">What should I name this cutie?</p>
             </div>
           </div> */}
           
-          <img
+          {/* <img
             src="/banner.png"
-            alt="Cute Siamese kitten"
+            alt="OSquare"
             className="w-full h-[400px] object-cover rounded-xl"
-          />
+          /> */}
+
+          <Slider />
 
           {/* <div className="absolute bottom-8 right-8 lg:right-12">
             <div className="bg-white rounded-full px-6 py-3 shadow-lg flex items-center space-x-3">

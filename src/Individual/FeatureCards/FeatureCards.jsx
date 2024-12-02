@@ -3,29 +3,29 @@ import FeatureCard from './FeatureCard';
 
 const features = [
   {
-    category: 'Designer',
-    title: 'OSquare Designer',
-    description: 'Unleash your creativity: Design and edit anything you can imagine with AI.',
-    image: 'https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&q=80',
-    buttonText: 'Learn more',
+    category: 'OSquare',
+    title: 'Can AI Become Your Therapist?',
+    description: 'In recent years, advancements in artificial intelligence (AI) have begun to revolutionize various fields, including general healthcare and mental healthcare. And this is transforming the healthcare world, especially the analytic and diagnostic avenues. The focus of this discussion is on role of AI in psychology and question is whether AI can become your therapist!',
+    image: 'https://innovador.solutions/wp-content/uploads/2019/11/blog1-1.jpg',
+    buttonText: 'Read more',
     buttonVariant: 'dark',
     bgColor: 'bg-purple-100'
   },
   {
     category: 'OSquare',
-    title: 'Expanding OSquare availability',
-    description: 'See expanded availability and purchase options for individuals and organizations, plus added value for subscribers.',
-    image: 'https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?auto=format&fit=crop&q=80',
-    buttonText: 'Read the blog',
+    title: 'The Ethical Implications of Using AI for Mental Health Diagnosis and Therapy',
+    description: 'ntroduction In recent years, artificial intelligence (AI) advancements have begun to revolutionize various fields, including general healthcare and mental healthcare. While AI can potentially transform healthcare’s analytic and diagnostic avenues, its application in psychology raises critical ethical questions.',
+    image: 'https://innovador.solutions/wp-content/uploads/2024/07/blog2.jpg',
+    buttonText: 'Read more',
     buttonVariant: 'dark',
     bgColor: 'bg-blue-50'
   },
   {
     category: 'OSquare',
-    title: 'Get priority access',
-    description: 'Enjoy priority access during peak times, get higher usage limits, and use OSquare in your favorite apps, like Word, Excel, PowerPoint, and Outlook.',
-    image: 'https://images.unsplash.com/photo-1633356122102-3fe601e05bd2?auto=format&fit=crop&q=80',
-    buttonText: 'Explore OSquare Pro',
+    title: 'Navigating the AI Revolution: Jobs, Challenges, and Opportunities',
+    description: 'Artificial intelligence has transformed industries, revolutionizing how we work, communicate, and live. As we embrace this technological leap, here’s how it affects the job landscape',
+    image: 'https://innovador.solutions/wp-content/uploads/2024/08/blog3-n.jpg',
+    buttonText: 'Read more',
     buttonVariant: 'dark',
     bgColor: 'bg-orange-100'
   }

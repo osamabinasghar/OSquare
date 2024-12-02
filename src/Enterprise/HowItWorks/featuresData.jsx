@@ -25,7 +25,7 @@ export const tab1Features = [
     icon: Zap,
     title: "Instant Employee Insights",
     description:
-      "In O Square, AMS gives access to employee data and effortlessly manage leaves and holidays with just a few clicks.",
+      "In OSquare, AMS gives access to employee data and effortlessly manage leaves and holidays with just a few clicks.",
     expanded: false,
     highlighted: false,
   },

@@ -47,13 +47,12 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`w-full bg-white shadow-sm z-50 transition-all duration-300 ${isScrolled ? 'fixed top-0' : 'relative'} bg-white text-black`}>
+    <nav className={`w-full bg-white shadow-sm z-50 transition-all duration-300 border-t-1 ${isScrolled ? 'fixed top-0' : 'relative'} bg-white text-black`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16">
           <div className="flex items-center space-x-4">
             <a
               href="#how-it-works"
-              onClick={() => handleLinkClick('how-it-works')}
               className={`hover:text-gray-300 ${activeLink === 'how-it-works' ? 'border-b-2 border-blue-950' : ''}`}
             >
               Solutions
@@ -96,7 +95,7 @@ const Navbar = () => {
           </div>
           <div className="hidden md:flex space-x-4 items-center">
             <a
-              href="#"
+              href="/#/enterprisepricing"
               className="mr-5 inline-block rounded-md bg-blue-950 px-4 py-2 text-center font-semibold text-white md:mr-6 lg:mr-8"
             >
               Try Now

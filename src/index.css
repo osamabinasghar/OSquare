@@ -15,3 +15,7 @@ html {
     transform: translateY(0);
   }
 }
+
+.spline-watermark {
+  display: none !important;
+}

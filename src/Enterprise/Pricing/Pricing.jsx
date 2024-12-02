@@ -1,10 +1,11 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Pricing = () => {
   return (
-    <section id="plans">
+    <section id="plans" className="bg-[url('/Middle-Image.jpg')] bg-cover bg-center">
       {/* Container */}
-      <div className="mx-auto max-w-2xl px-5 py-16 md:px-10 md:py-20">
+      <div className="mx-auto max-w-full px-5 py-16 md:px-10 md:py-20">
         {/* Heading Container */}
         <div className="mx-auto mb-8 text-center md:mb-12 lg:mb-16">
           {/* Heading */}
@@ -12,7 +13,7 @@ const Pricing = () => {
             Simple &amp; Affordable Pricing
           </h2>
           {/* Subheading */}
-          <p className="mt-5 text-gray-500">30 days money-back guarantee</p>
+          <p className="mt-5 text-black">30 days money-back guarantee</p>
         </div>
 
         {/* Pricing Cards */}
@@ -22,21 +23,22 @@ const Pricing = () => {
             title="Features"
             // price="$49"
             features={[
-              "Attendance Management",
-              "Project Management",
               "Human Resource Management",
-              "Forms Management",
+              "Project Management",
               "Lead Generation",
+              "Forms Management",
+              // "Attendance Management",
             ]}
             buttonText="Get started"
             products={[
-              "/apps/ams.svg",
-              "/apps/iteam.svg",
               "/apps/hr360.svg",
-              "/apps/easyforms.svg",
+              "/apps/iteam.svg",
               "/apps/leadkonnekt.svg",
+              "/apps/easyforms.svg",
+              // "/apps/ams.svg",import React from 'react';
             ]}
-          />
+            />
+
           {/* Pricing Card 2 */}
           {/* <PricingCard
             title="Standard"
@@ -81,7 +83,7 @@ const Pricing = () => {
 
 // PricingCard Component for reuse
 const PricingCard = ({ title, price, features, buttonText, products }) => (
-  <div className="flex flex-col items-center gap-6 rounded-md bg-gray-100 p-8 text-center">
+  <div className="flex flex-col items-center gap-6 rounded-md bg-white/40 p-8 text-center">
     {/* Card Title */}
     <h3 className="text-2xl font-semibold">{title}</h3>
 
@@ -106,22 +108,22 @@ const PricingCard = ({ title, price, features, buttonText, products }) => (
         <span className="text-sm font-light">/month</span>
       </h2> */}
 
-<div className="flex gap-2 overflow-x-auto">
-  {products.map((product, index) => (
-    <img
-      key={index}
-      src={product}
-      alt={`Product ${index + 1}`}
-      className="h-16 w-16 object-contain rounded" // Change to object-contain
-    />
-  ))}
-</div>
-      <a
-        href="#"
+      <div className="flex gap-2 overflow-x-auto">
+        {products.map((product, index) => (
+          <img
+            key={index}
+            src={product}
+            alt={`Product ${index + 1}`}
+            className="h-16 w-16 object-contain rounded" // Change to object-contain
+          />
+        ))}
+      </div>
+      <Link
+        to="/enterprisepricing"
         className="inline-block w-full rounded-md bg-[#172554] px-6 py-3 mt-3 font-semibold text-white"
       >
         {buttonText}
-      </a>
+      </Link>
     </div>
   </div>
 );

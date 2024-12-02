@@ -1,70 +1,87 @@
 import React, { useState } from 'react';
-import { Sticker, FileText, Table, Mail, Grid, Shield, Cloud, ChevronRight } from 'lucide-react';
+import { ChevronRight, } from 'lucide-react';
 import AppCard from './AppCard';
 import FeaturedCard from './FeaturedCard';
 
-const apps = [
+
+const topPicks = [
   {
-    icon: Sticker,
-    iconColor: 'text-blue-600',
-    name: 'AMS',
-    description: 'Elevate your writing and create beautiful documents—anywhere, anytime.'
-  },
-  {
-    icon: Sticker,
-    iconColor: 'text-green-600',
-    name: 'Aasaann',
-    description: 'Turn data into insights with free and premium spreadsheets.'
-  },
-  {
-    icon: Sticker,
+    icon: '/apps/hr360.svg',
     iconColor: 'text-sky-600',
-    name: 'EasyFee',
-    description: 'Manage your email, calendar, tasks, and contacts in one location.'
-  },
-  {
-    icon: Sticker,
-    iconColor: 'text-purple-600',
-    name: 'EasyForms',
-    description: 'Access your apps and files all in one place.'
-  },
-  {
-    icon: Sticker,
-    iconColor: 'text-blue-700',
     name: 'HR360Cloud',
-    description: 'Safeguard your personal data and devices with an easy-to-use app. Requires a OSquare 365 Personal or Family plan.'
+    description: 'Optimize your HR processes and manage employee data seamlessly—all in one secure, cloud-based platform.'
   },
   {
-    icon: Sticker,
-    iconColor: 'text-blue-500',
-    name: 'iSchool',
-    description: 'Save and share your files and photos, wherever you go.'
-  },
-  {
-    icon: Sticker,
-    iconColor: 'text-purple-600',
-    name: 'iSchool For Me',
-    description: 'Access your apps and files all in one place.'
-  },
-  {
-    icon: Sticker,
-    iconColor: 'text-blue-700',
+    icon:'/apps/iteam.svg',
+    iconColor: 'text-green-600',
     name: 'iTeam',
-    description: 'Safeguard your personal data and devices with an easy-to-use app. Requires a OSquare 365 Personal or Family plan.'
+    description: 'Empower your team and streamline project workflows—collaborate, manage tasks, and track progress from anywhere.'
+  },  
+  {
+    icon: '/apps/leadkonnekt.svg',
+    iconColor: 'text-sky-600',
+    name: 'LeadKonnekt',
+    description: 'Effortlessly generate, manage, and optimize leads—simplify prospecting and enhance your customer acquisition strategy with LeadKonnekt.'
   },
   {
-    icon: Sticker,
-    iconColor: 'text-blue-500',
-    name: 'Soul Whispers',
-    description: 'Save and share your files and photos, wherever you go.'
-  }
+    icon: '/apps/easyforms.svg',
+    iconColor: 'text-sky-600',
+    name: 'EasyForms',
+    description: 'Create, manage, and automate forms with ease—streamline data collection and improve workflow efficiency.'
+  },
 ];
+
+// const moreApps = [
+//   {
+//     icon: '/apps/AMS.png',
+//     iconColor: 'text-purple-600',
+//     name: 'EasyForms',
+//     description: 'Access your apps and files all in one place.'
+//   },
+//   {
+//     icon: '/apps/AMS.png',
+//     iconColor: 'text-blue-700',
+//     name: 'HR360Cloud',
+//     description: 'Safeguard your personal data and devices with an easy-to-use app. Requires a OSquare 365 Personal or Family plan.'
+//   },
+//   {
+//     icon: '/apps/AMS.png',
+//     iconColor: 'text-blue-500',
+//     name: 'iSchool',
+//     description: 'Save and share your files and photos, wherever you go.'
+//   },
+//   {
+//     icon: '/public/apps/AMS.png',
+//     iconColor: 'text-purple-600',
+//     name: 'iSchool For Me',
+//     description: 'Access your apps and files all in one place.'
+//   },
+//   {
+//     icon: '/public/apps/AMS.png',
+//     iconColor: 'text-blue-700',
+//     name: 'iTeam',
+//     description: 'Safeguard your personal data and devices with an easy-to-use app. Requires a OSquare 365 Personal or Family plan.'
+//   },
+//   {
+//     icon: '/public/apps/AMS.png',
+//     iconColor: 'text-blue-500',
+//     name: 'Soul Whispers',
+//     description: 'Save and share your files and photos, wherever you go.'
+//   }
+// ];
 
 const AppsShowcase = () => {
   const [activeTab, setActiveTab] = useState('top-picks');
 
+  // Determine which list of apps to display based on activeTab
+  const displayedApps = activeTab === 'top-picks' ? topPicks : moreApps;
+
   return (
-    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16" id='whats-included'>
+    <section
+      className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 bg-cover bg-center"
+      style={{ backgroundImage: "url('https://your-image-url.com/path-to-image.jpg')" }}
+      id='whats-included'
+    >
       <div className="space-y-8">
         {/* Header */}
         <div>
@@ -72,13 +89,24 @@ const AppsShowcase = () => {
             WHAT'S INCLUDED
           </span>
           <h2 className="mt-2 text-4xl font-semibold text-gray-900">
-            Boost your potential with O Square
+            Boost your potential with <span
+            style={{
+              fontFamily: 'Bhineka',
+              fontSize: '3rem',
+              background: 'linear-gradient(to right, #1E4FCD, #F36F7E)', // Replace with your desired colors
+              WebkitBackgroundClip: 'text',
+              color: 'transparent',
+            }}
+            className='mr-0'
+          >
+            O
+          </span>Square
           </h2>
         </div>
 
         {/* Tabs */}
-        <div className="flex space-x-4">
-          <button
+        {/* <div className="flex space-x-4"> */}
+          {/* <button
             onClick={() => setActiveTab('top-picks')}
             className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
               activeTab === 'top-picks'
@@ -87,8 +115,8 @@ const AppsShowcase = () => {
             }`}
           >
             Top picks
-          </button>
-          <button
+          </button> */}
+          {/* <button
             onClick={() => setActiveTab('more-apps')}
             className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
               activeTab === 'more-apps'
@@ -97,24 +125,21 @@ const AppsShowcase = () => {
             }`}
           >
             More apps
-          </button>
-        </div>
+          </button> */}
+        {/* </div> */}
+        
+        {/* Featured Card (conditionally rendered) */}
+        <FeaturedCard activeTab={activeTab} />
 
         {/* Apps Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
-          {/* Featured Card */}
-          <FeaturedCard />
-          
-          {/* App Cards */}
-          <div className="lg:col-span-4 grid sm:grid-cols-3 gap-6">
-            {apps.map((app, index) => (
-              <AppCard key={index} {...app} />
-            ))}
-          </div>
+        <div className="lg:col-span-3 grid p-8 grid-cols-1 sm:grid-cols-4 gap-6">
+          {displayedApps.map((app, index) => (
+            <AppCard key={index} {...app} />
+          ))}
         </div>
 
         {/* Explore All Link */}
-        <div className="flex justify-end">
+        {/* <div className="flex justify-end">
           <a
             href="#"
             className="inline-flex items-center text-[#0F1B4C] font-semibold hover:underline group"
@@ -122,7 +147,7 @@ const AppsShowcase = () => {
             Explore all apps
             <ChevronRight className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-0.5" />
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );

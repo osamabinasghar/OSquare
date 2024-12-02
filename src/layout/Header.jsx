@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ChevronDownIcon, MagnifyingGlassIcon, UserCircleIcon } from '@heroicons/react/24/outline';
+import { ChevronDownIcon, UserCircleIcon } from '@heroicons/react/outline';
 
 const Header = () => {
   const [showProductsDropdown, setShowProductsDropdown] = useState(false);
@@ -14,12 +14,14 @@ const Header = () => {
   const toggleProductsDropdown = () => {
     setShowProductsDropdown(prevState => !prevState);
     setShowResourcesDropdown(false); // Close other dropdown
+    setShowSupportDropdown(false);
   };
 
   // Toggle dropdown when "Resources" button is clicked
   const toggleResourcesDropdown = () => {
     setShowResourcesDropdown(prevState => !prevState);
     setShowProductsDropdown(false); // Close other dropdown
+    setShowSupportDropdown(false);
   };
 
   const toggleSupportDropdown = () => {
@@ -50,14 +52,15 @@ const Header = () => {
 
   return (
     <div className="w-full">
-      <header className="bg-white shadow-md">
+      <header className="bg-white shadow-md border-b-2 border-grey-100">
         <nav className="mx-auto flex max-w-7xl items-center justify-between p-5">
           <div className="flex items-center gap-x-6">
           <a href="/">
             <span className='flex items-center'>
-              <img src='/icon.svg' className='h-8 mr-2' /> {/* Adjust margin here */}
-              <span style={{fontSize: '2rem'}}>|</span>
-              <img src="/Logo.svg" alt="OSquare" className="h-8 ml-2" /> {/* Adjust margin here */}
+              {/* <img src='/icon.svg' className='h-8 mr-2' /> Adjust margin here */}
+              {/* <span style={{fontSize: '2rem'}}>|</span> */}
+              <img src="/Logo.svg" alt="OSquare" className="h-8 ml-2" />
+              {/* Adjust margin here */}
             </span>
           </a>
 
@@ -81,50 +84,53 @@ const Header = () => {
                     <div className="mx-auto max-w-7xl p-6 grid grid-cols-5 border-b-2 border-blue-900">
                       {/* Column 1 */}
                       <div>
-                        <h3 className="font-semibold text-gray-900 text-sm mb-2">For home</h3>
-                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">Pricing for home</a>
-                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">For families</a>
-                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">For individuals</a>
-                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">For students</a>
-                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">See all home</a>
+                        <h3 className="font-semibold text-gray-900 text-sm mb-2"></h3>
+                        <p className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded font-semibold text-gray-900 text-sm">for Enterprise</p>
+                        <p className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded font-semibold text-gray-900 text-sm">for Business</p>
+                        <p className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded font-semibold text-gray-900 text-sm">For Education</p>
+                        <p className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded font-semibold text-gray-900 text-sm">For Individual</p>
                       </div>
 
                       {/* Column 2 */}
                       <div>
-                        <h3 className="font-semibold text-gray-900 text-sm mb-2">For business</h3>
-                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">Pricing for business</a>
-                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">For small business</a>
+                        <h3 className="font-semibold text-gray-900 text-sm mb-2">For Enterprise</h3>
+                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">HR360Cloud</a>
+                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">iTeam</a>
+                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">Lead Konnekt</a>
+                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">Easy Forms</a>
                       </div>
 
                       {/* Column 3 */}
                       <div>
-                        <h3 className="font-semibold text-gray-900 text-sm mb-2">For enterprise</h3>
-                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">Pricing for enterprise</a>
-                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">For enterprise</a>
-                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">For frontline workers</a>
+                        <h3 className="font-semibold text-gray-900 text-sm mb-2">For Business</h3>
+                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">HR360Cloud</a>
+                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">iTeam</a>
+                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">Lead Konnekt</a>
+                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">Easy Forms</a>
                       </div>
 
                       {/* Column 4 */}
                       <div>
-                        <h3 className="font-semibold text-gray-900 text-sm mb-2">Apps and services</h3>
-                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">Microsoft 365 Copilot</a>
-                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">Excel</a>
-                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">Microsoft Teams</a>
-                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">Word</a>
-                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">OneDrive</a>
-                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">See all apps and services</a>
+                        <h3 className="font-semibold text-gray-900 text-sm mb-2">For Education</h3>
+                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">HR360Cloud</a>
+                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">Lead Konnekt</a>
+                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">Easy Forms</a>
+                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">iSchool</a>
+                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">iSchool For Me</a>
+                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">Easy Fee</a>
                       </div>
 
                       {/* Column 5 */}
                       <div>
-                        <h3 className="font-semibold text-gray-900 text-sm mb-2">More</h3>
-                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">Microsoft Office</a>
-                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">Windows 365</a>
-                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">Microsoft Viva</a>
-                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">Microsoft Authenticator</a>
-                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">What's new</a>
-                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">Planner</a>
-                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">Clipchamp</a>
+                        <h3 className="font-semibold text-gray-900 text-sm mb-2">Individual</h3>
+                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">HR360Cloud</a>
+                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">iTeam</a>
+                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">Lead Konnekt</a>
+                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">Easy Forms</a>
+                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">iSchool</a>
+                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">iSchool For Me</a>
+                        <a href="#" className="block text-sm text-gray-700 hover:bg-gray-100 p-2 rounded">Easy Fee</a>
+
                       </div>
                     </div>
                   </div>
@@ -204,6 +210,15 @@ const Header = () => {
               </div>
             </div>
           </div>
+          {/* Right Side (User Icon) */}
+          {/* <div className="flex items-center gap-x-4"> */}
+            {/* <a href="/"> */}
+              {/* <button className="flex items-center text-gray-700 hover:text-gray-900"> */}
+                {/* <UserCircleIcon className="h-8 w-8" /> */}
+                {/* <span className="ml-2 hidden sm:block text-sm">Sign In</span> */}
+              {/* </button> */}
+            {/* </a> */}
+          {/* </div> */}
         </nav>
       </header>
     </div>

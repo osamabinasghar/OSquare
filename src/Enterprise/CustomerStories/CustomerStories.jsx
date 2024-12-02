@@ -6,7 +6,7 @@ import TestimonialNav from './TestimonialNav';
 const testimonials = [
   {
     id: 1,
-    quote: "I work with data, so I understand [its] importance for very large, organized projects. So having that toolset available for my kids is just incredibly powerful.",
+    quote: "OSquare has transformed how our family stays connected and organized.",
     author: "Abid Hussain",
     role: "father",
     image: "https://images.unsplash.com/photo-1559734840-f9509ee5677f?auto=format&fit=crop&q=80",

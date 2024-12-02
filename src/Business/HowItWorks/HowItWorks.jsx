@@ -1,84 +1,100 @@
-import React, { useState, useCallback } from 'react';
-import { Shield, Lightbulb, Zap } from 'lucide-react';
-import Feature from './Feature';
-
-const initialFeatures = [
-  {
-    id: 'stay-safer',
-    icon: Shield,
-    title: 'Stay safer online',
-    description: 'Safeguard photos, documents, phones, tablets, and computers with features designed to secure your digital life.',
-    details: [
-      'Advanced encryption for all your files',
-      'Two-factor authentication',
-      'Real-time threat detection',
-      'Secure password manager'
-    ],
-    expanded: true,
-    highlighted: true
-  },
-  {
-    id: 'bring-ideas',
-    icon: Lightbulb,
-    title: 'Bring your ideas to life',
-    description: 'Transform your concepts into reality with powerful tools for creativity and collaboration.',
-    details: [
-      'AI-powered brainstorming',
-      'Real-time collaboration',
-      'Smart templates library',
-      'Version control system'
-    ],
-    expanded: false,
-    highlighted: false
-  },
-  {
-    id: 'power-tasks',
-    icon: Zap,
-    title: 'Power through tasks',
-    description: 'Accomplish more in less time with AI-powered productivity tools and seamless integration.',
-    details: [
-      'Smart task automation',
-      'Integrated workflow builder',
-      'Progress analytics',
-      'Cross-platform sync'
-    ],
-    expanded: false,
-    highlighted: false
-  }
-];
+import React, { useState, useCallback } from "react";
+import {
+  tab1Features,
+  tab2Features,
+  tab3Features,
+  tab1Images,
+  tab2Images,
+  tab3Images,
+} from "./featuresData";
+import Feature from "./Feature";
 
 const HowItWorks = () => {
-  const [features, setFeatures] = useState(initialFeatures);
-  const [activeImage, setActiveImage] = useState('stay-safer');
+  const [features, setFeatures] = useState(tab1Features);
+  const [activeImage, setActiveImage] = useState("accordion-1");
+  const [tabs, setTabs] = useState(1);
 
   const toggleFeature = useCallback((id) => {
-    setFeatures(prev => prev.map(feature => ({
-      ...feature,
-      expanded: feature.id === id,
-      highlighted: feature.id === id
-    })));
+    setFeatures((prev) =>
+      prev.map((feature) => ({
+        ...feature,
+        expanded: feature.id === id,
+        highlighted: feature.id === id,
+      }))
+    );
     setActiveImage(id);
   }, []);
 
   const getImageForFeature = (id) => {
-    const images = {
-      'stay-safer': 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&q=80',
-      'bring-ideas': 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&q=80',
-      'power-tasks': 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&q=80'
-    };
+    let images;
+    if (tabs === 1) images = tab1Images;
+    else if (tabs === 2) images = tab2Images;
+    else if (tabs === 3) images = tab3Images;
+    else if (tabs === 4) images = tab4Images;
+    else if (tabs === 5) images = tab5Images;
+
     return images[id];
   };
 
+  const handleTabChange = (tabIndex) => {
+    setTabs(tabIndex);
+    switch (tabIndex) {
+      case 1:
+        setFeatures(tab1Features);
+        setActiveImage("accordion-1"); // Reset active image for each tab
+        break;
+      case 2:
+        setFeatures(tab2Features);
+        setActiveImage("accordion-2");
+        break;
+      case 3:
+        setFeatures(tab3Features);
+        setActiveImage("accordion-3");
+        break;
+      default:
+        setFeatures(tab1Features);
+        setActiveImage("accordion-1");
+    }
+  };
+
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-white to-purple-50 py-24">
+    <section className="relative overflow-hidden bg-gradient-to-br from-white to-purple-50 py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative z-10">
           <span className="text-[#172554] font-semibold tracking-wide uppercase text-sm">
-            HOW IT WORKS
+            SOLUTIONS
           </span>
           <h2 className="mt-4 text-4xl font-bold text-gray-900 sm:text-5xl">
-            Help maximize your everyday
+            Leverage productivity <br />
+            of businesses
           </h2>
+
+          {/* <div className="space-x-2 mt-8">
+            <button
+              className={`rounded-3xl font-semibold transition-all duration-200 p-3 ${
+                tabs === 1 ? "text-white bg-[#172554]" : "text-[#172554] bg-[#DBE2E5]"
+              }`}
+              onClick={() => handleTabChange(1)}
+            >
+              Unleash Creative Potential
+            </button>
+            <button
+              className={`rounded-3xl font-semibold transition-all duration-200 p-3 ${
+                tabs === 2 ? "text-white bg-[#172554]" : "text-[#172554] bg-[#DBE2E5]"
+              }`}
+              onClick={() => handleTabChange(2)}
+            >
+              Boost Efficiency
+            </button>
+            <button
+              className={`rounded-3xl font-semibold transition-all duration-200 p-3 ${
+                tabs === 3 ? "text-white bg-[#172554]" : "text-[#172554] bg-[#DBE2E5]"
+              }`}
+              onClick={() => handleTabChange(3)}
+            >
+              Work Confidently
+            </button>
+          </div> */}
 
           <div className="mt-16 grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             <div className="space-y-6">

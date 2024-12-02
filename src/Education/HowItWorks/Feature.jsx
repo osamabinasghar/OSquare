@@ -5,7 +5,6 @@ const Feature = ({
   icon: Icon,
   title,
   description,
-  details,
   isExpanded,
   isHighlighted,
   onToggle
@@ -53,43 +52,6 @@ const Feature = ({
           </div>
         </div>
       </button>
-      
-      <div
-        className={`transition-all duration-200 ${
-          isExpanded ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0 overflow-hidden'
-        }`}
-      >
-        <div className="px-16 pb-4">
-          <ul className="space-y-2">
-            {details.map((detail, index) => (
-              <li key={index} className="flex items-center text-gray-600">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#172554] mr-2" />
-                {detail}
-              </li>
-            ))}
-          </ul>
-          
-          <a
-            href="#"
-            className="mt-4 inline-flex items-center text-sm font-medium text-[#172554] hover:text-[#172554]"
-          >
-            Learn more
-            <svg
-              className="ml-1 w-4 h-4 transition-transform group-hover:translate-x-1"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M9 5l7 7-7 7"
-              />
-            </svg>
-          </a>
-        </div>
-      </div>
     </div>
   );
 };

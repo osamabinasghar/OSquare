@@ -12,7 +12,19 @@ const FeaturedNews = () => {
             FEATURED NEWS
           </span>
           <h1 className="mt-2 text-4xl sm:text-5xl font-semibold text-gray-900">
-            Discover what's happening with O Square
+            Discover what's happening with <span className='mr-0'></span>
+            <span
+              style={{
+                fontFamily: 'Bhineka',
+                fontSize: '3.5rem',
+                background: 'linear-gradient(to right, #1E4FCD, #F36F7E)', // Replace with your desired colors
+                WebkitBackgroundClip: 'text',
+                color: 'transparent',
+              }}
+              className='mr-0'
+            >
+              O
+            </span>Square
           </h1>
         </header>
 

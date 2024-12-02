@@ -9,7 +9,7 @@ const TestimonialNav = ({ total, current, onChange }) => {
           onClick={() => onChange(index)}
           className={`w-2.5 h-2.5 rounded-full transition-all ${
             current === index
-              ? 'bg-blue-600 w-8'
+              ? 'bg-[#172554] w-8'
               : 'bg-gray-300 hover:bg-gray-400'
           }`}
         />

@@ -1,12 +1,12 @@
 import React from 'react';
 import { ChevronRight } from 'lucide-react';
 
-const AppCard = ({ icon: Icon, iconColor, name, description }) => {
+const AppCard = ({ icon, iconColor, name, description }) => {
   return (
     <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
       <div className="space-y-4">
         <div className={`${iconColor}`}>
-          <Icon className="w-10 h-10" />
+          <img src={icon} alt={`${name} icon`} className="w-30 h-20" />
         </div>
         
         <div>

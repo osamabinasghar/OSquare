@@ -1,22 +1,10 @@
 import React, { useState } from 'react';
-import { ChevronRight, } from 'lucide-react';
+// import { ChevronRight, } from 'lucide-react';
 import AppCard from './AppCard';
 import FeaturedCard from './FeaturedCard';
 
 
 const topPicks = [
-  {
-    icon: '/apps/ams.svg',
-    iconColor: 'text-blue-600',
-    name: 'AMS',
-    description: 'Streamline attendance tracking and manage your workforce effortlessly—anytime, anywhere.'
-  },
-  {
-    icon:'/apps/iteam.svg',
-    iconColor: 'text-green-600',
-    name: 'iTeam',
-    description: 'Empower your team and streamline project workflows—collaborate, manage tasks, and track progress from anywhere.'
-  },
   {
     icon: '/apps/hr360.svg',
     iconColor: 'text-sky-600',
@@ -24,17 +12,24 @@ const topPicks = [
     description: 'Optimize your HR processes and manage employee data seamlessly—all in one secure, cloud-based platform.'
   },
   {
-    icon: '/apps/easyforms.svg',
-    iconColor: 'text-sky-600',
-    name: 'EasyForms',
-    description: 'Create, manage, and automate forms with ease—streamline data collection and improve workflow efficiency.'
-  },
+    icon:'/apps/iteam.svg',
+    iconColor: 'text-green-600',
+    name: 'iTeam',
+    description: 'Empower your team and streamline project workflows—collaborate, manage tasks, and track progress from anywhere.'
+  },  
   {
     icon: '/apps/leadkonnekt.svg',
     iconColor: 'text-sky-600',
     name: 'LeadKonnekt',
     description: 'Effortlessly generate, manage, and optimize leads—simplify prospecting and enhance your customer acquisition strategy with LeadKonnekt.'
-  }
+  },
+  {
+    icon: '/apps/easyforms.svg',
+    iconColor: 'text-sky-600',
+    name: 'EasyForms',
+    description: 'Create, manage, and automate forms with ease—streamline data collection and improve workflow efficiency.'
+  },
+
 ];
 
 // const moreApps = [
@@ -98,7 +93,7 @@ const AppsShowcase = () => {
             Boost your potential with <span
             style={{
               fontFamily: 'Bhineka',
-              fontSize: '2.5rem',
+              fontSize: '3rem',
               background: 'linear-gradient(to right, #1E4FCD, #F36F7E)', // Replace with your desired colors
               WebkitBackgroundClip: 'text',
               color: 'transparent',
@@ -111,8 +106,8 @@ const AppsShowcase = () => {
         </div>
 
         {/* Tabs */}
-        <div className="flex space-x-4">
-          <button
+        {/* <div className="flex space-x-4"> */}
+          {/* <button
             onClick={() => setActiveTab('top-picks')}
             className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
               activeTab === 'top-picks'
@@ -121,7 +116,7 @@ const AppsShowcase = () => {
             }`}
           >
             Top picks
-          </button>
+          </button> */}
           {/* <button
             onClick={() => setActiveTab('more-apps')}
             className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
@@ -132,13 +127,13 @@ const AppsShowcase = () => {
           >
             More apps
           </button> */}
-        </div>
+        {/* </div> */}
         
         {/* Featured Card (conditionally rendered) */}
         <FeaturedCard activeTab={activeTab} />
 
         {/* Apps Grid */}
-        <div className="lg:col-span-3 grid p-8 grid-cols-1 sm:grid-cols-3 gap-6">
+        <div className="lg:col-span-3 grid p-8 grid-cols-1 sm:grid-cols-4 gap-6">
           {displayedApps.map((app, index) => (
             <AppCard key={index} {...app} />
           ))}

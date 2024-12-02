@@ -30,10 +30,10 @@ const FeaturedCard = ({ activeTab }) => {
         <h3 className="text-2xl font-semibold">{cardTitle}</h3>
         <p className="text-black">{cardDescription}</p>
         <div className="mt-8">
-          <button className="inline-flex items-center px-6 py-3 text-white bg-black text-gray rounded-md font-semibold hover:bg-gray-500 transition-colors">
+          {/* <button className="inline-flex items-center px-6 py-3 text-white bg-black text-gray rounded-md font-semibold hover:bg-gray-500 transition-colors">
             Learn more
             <ChevronRight className="ml-2 w-4 h-4" />
-          </button>
+          </button> */}
         </div>
       </div>
     </div>

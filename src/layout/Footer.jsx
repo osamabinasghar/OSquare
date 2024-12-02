@@ -1,122 +1,184 @@
-import React from 'react'
-import { Globe } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { Globe, Facebook, Twitter, Linkedin, ArrowUp } from "lucide-react";
 
-const footerData = {
+const Footer2 = () => {
+  const footerData = {
     sections: [
     {
         title: "What's new",
         links: [
-            { name: 'Surface Book 3', url: '/surface-book-3' },
-            { name: 'Surface Pro', url: '/surface-pro' },
-            { name: 'OSquare Copilot', url: '/osquare-copilot' },
-            { name: 'OSquare 365', url: '/osquare-365' },
-            { name: 'Windows 11 apps', url: '/windows-11-apps' }
+            { name: 'Surface Book 3', url: '' },
+            { name: 'Surface Pro', url: '' },
+            { name: 'OSquare Copilot', url: '' },
+            { name: 'OSquare 365', url: '' },
+            { name: 'Windows 11 apps', url: '' },
         ]
     },
     {
-        title: 'OSquare Store',
+        title: 'Enterprise',
         links: [
-            { name: 'Account profile', url: '/account-profile' },
-            { name: 'Download Center', url: '/download-center' },
-            { name: 'OSquare Store Support', url: '/store-support' },
-            { name: 'Extended holiday returns', url: '/holiday-returns' },
-            { name: 'Order tracking', url: '/order-tracking' },
-            { name: 'Support', url: '/support' }
+            { name: 'Human Resource', url: '' },
+            { name: 'Project Management', url: '' },
+            { name: 'Customer Relationship Management', url: '' },
+            { name: 'Forms & Workflows', url: '' },
+            { name: 'Dedicated Server', url: '' },
+            { name: 'Live Support', url: '' },
+            { name: 'Customisation', url: '' },
         ]
+    },
+    {
+      title: 'Business',
+      links: [
+        { name: 'Human Resource', url: '' },
+        { name: 'Project Management', url: '' },
+        { name: 'Customer Relationship Management', url: '' },
+        { name: 'Forms & Workflows', url: '' },
+      ]
     },
     {
         title: 'Education',
         links: [
-            { name: 'OSquare in education', url: '/osquare-in-education' },
-            { name: 'Devices for education', url: '/devices-for-education' },
-            { name: 'OSquare Teams for Education', url: '/osquare-teams-for-education' },
-            { name: 'OSquare 365 Education', url: '/osquare-365-education' },
-            { name: 'Office Education', url: '/office-education' },
-            { name: 'Educator Training', url: '/educator-training' }
+            { name: 'Human Resource', url: '' },
+            { name: 'School Management System', url: '' },
+            { name: 'Fee Management', url: '' },
+            { name: 'Forms', url: '' },
+            { name: 'Mobile App', url: '' },
         ]
     },
     {
-        title: 'Business',
+        title: 'Individual',
         links: [
-            {name: 'OSquare Cloud', url: '/osquare-cloud' },
-            {name: 'OSquare Security', url: '/osquare-security' },
-            {name: 'Azure', url: '/azure' },
-            {name: 'Dynamics 365', url: '/dynamics-365' },
-            {name: 'OSquare 365', url: '/osquare-365' },
-            {name: 'OSquare Teams', url: '/osquare-teams' }
+            { name: 'Project Management', url: '' },
+            { name: 'Customer Relationship Management', url: '' },
+            { name: 'Forms', url: '' },
+            { name: 'Calender', url: '' },
         ]
     },
-    {
-        title: 'Developer & IT',
-        links: [
-            {name: 'Developer Center', url: '/developer-center' },
-            {name: 'Documentation', url: '/documentation' },
-            {name: 'OSquare Learn', url: '/osquare-learn' },
-            {name: 'OSquare Tech Community', url: '/osquare-tech-community' },
-            {name: 'Azure Marketplace', url: '/azure-marketplace' },
-            {name: 'AppSource', url: '/appsource' }
-        ]
-    },
-    {
-        title: 'Company',
-        links: [
-            {name: 'Careers', url: '/careers'},
-            {name: 'About OSquare', url: '/about-osquare'},
-            {name: 'Company news', url: '/company-news'},
-            {name: 'Privacy at OSquare', url: '/privacy-at-osquare'},
-            {name: 'Investors', url: '/investors'},
-            {name: 'Sustainability', url: '/sustainability'}
-        ]
-    }
-    ]
+    ]};
+
+  const [showScrollToTop, setShowScrollToTop] = useState(false);
+
+  // Track scroll position to toggle "Back to Top" button visibility
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollToTop(window.scrollY > 300);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-const Footer = () => {
   return (
     <>
-        <footer className="bg-gray-50 pt-12 text-sm pb-5">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-              {footerData.sections.map((section, index) => (
-                <div key={index}>
-                    <h3 className="font-semibold text-gray-600 mb-4">{section.title}</h3>
-                    <ul className="space-y-3">
-                    {section.links.map((link, linkIndex) => (
-                        <li key={linkIndex}>
-                        <a
-                            href={link.url}
-                            className="text-gray-500 hover:text-gray-700 hover:underline"
-                        >
-                            {link.name}
-                        </a>
-                        </li>
-                    ))}
-                    </ul>
-                </div>
-                ))}
-            </div>
+      <footer className="bg-gray-50 pt-12 text-sm pb-5 relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
+          {/* Footer Content */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+            {footerData.sections.map((section, index) => (
+              <div
+                key={index}
+                className={`${
+                  index === 0
+                    ? "col-span-2 lg:col-span-2 md:border-r md:pr-6 border-gradient-to-r from-violet-600 to-indigo-600"
+                    : ""
+                }`}
+              >
+                <h3 className="font-semibold text-gray-600 mb-4">{section.title}</h3>
+                <ul className="space-y-3">
+                  {section.links.map((link, linkIndex) => (
+                    <li key={linkIndex}>
+                      <a
+                        href={link.url}
+                        className="text-gray-500 hover:text-gray-700 hover:underline"
+                      >
+                        {link.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
 
-            <div className="mt-12 pt-8 border-t border-gray-200">
-              <div className="flex flex-col md:flex-row items-start md:items-center justify-between space-y-4 md:space-y-0">
-                <div className="flex items-center space-x-4">
-                  <Globe className="h-5 w-5 text-gray-500" />
-                  <span className="text-gray-600">English (Other)</span>
-                </div>
-                
-                <div className="flex flex-wrap gap-x-6 gap-y-2 text-gray-500">
-                  <a href="#" className="hover:text-gray-700 hover:underline">Contact OSquare</a>
-                  <a href="#" className="hover:text-gray-700 hover:underline">Privacy</a>
-                  <a href="#" className="hover:text-gray-700 hover:underline">Terms of use</a>
-                  <a href="#" className="hover:text-gray-700 hover:underline">Trademarks</a>
-                  <a href="#" className="hover:text-gray-700 hover:underline">About our ads</a>
-                  <span>© OSquare {new Date().getFullYear()}</span>
-                </div>
+          {/* Bottom Section */}
+          <div className="mt-12 pt-8 mb-2 border-t border-gradient-to-r from-violet-600 to-indigo-600">
+            <div className="flex flex-col md:flex-row items-start md:items-center justify-between space-y-4 md:space-y-0">
+              <div className="flex items-center space-x-4">
+                <Globe className="h-5 w-5 text-gray-500" />
+                <span className="text-gray-600">English (Other)</span>
+              </div>
+              <div className="flex flex-wrap gap-x-6 gap-y-2 text-gray-500">
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-500 hover:text-blue-900 transition-colors"
+                  aria-label="Facebook"
+                >
+                  <Facebook className="h-6 w-6" />
+                </a>
+                {/* <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-500 hover:text-gray-700 transition-colors"
+                  aria-label="Twitter"
+                >
+                  <Twitter className="h-6 w-6" />
+                </a> */}
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-gray-500 hover:text-blue-900 transition-colors"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin className="h-6 w-6" />
+                </a>
               </div>
             </div>
           </div>
-        </footer>
-    </>
-  )
-}
 
-export default Footer
+          {/* Copyright and Links */}
+          <div className="flex flex-col md:flex-row items-start md:items-center justify-between space-y-4 md:space-y-0">
+            <div className="flex items-center space-x-4">
+              Powered by{" "}
+              <img src="/Innovador-Solutions.svg" alt="innovador solutions" width={100} />
+            </div>
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-gray-500">
+              <a href="#" className="hover:text-gray-700 hover:underline">
+                Contact OSquare
+              </a>
+              <a href="#" className="hover:text-gray-700 hover:underline">
+                Privacy Policy
+              </a>
+              <a href="#" className="hover:text-gray-700 hover:underline">
+                Terms of use
+              </a>
+              <span>© OSquare {new Date().getFullYear()}</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Back to Top Button */}
+        {showScrollToTop && (
+          <button
+            onClick={scrollToTop}
+            className="fixed bottom-4 right-4 bg-[#172554] text-white p-3 rounded-full shadow-lg hover:bg-[#172554]/75 focus:outline-none transition"
+            aria-label="Scroll to Top"
+          >
+            <ArrowUp className="h-5 w-5" />
+          </button>
+        )}
+      </footer>
+    </>
+  );
+};
+
+export default Footer2;
